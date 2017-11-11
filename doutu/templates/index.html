@@ -11,9 +11,10 @@
     数量：<input type="text" name="count" value="100"><br>
     <input type="submit" value="查询">
 </form>
-<h1>{{ images.imageNam }}</h1>
-<img src="{{ imageUrl }}" alt="{{ imageNam }}"/>
-
+    
+{% for i in images %}
+    <img src="{{ i.imageUrl }}" alt="{{ i.imageNam }}"/>    
+{% endfo %}
 
 </body>
 </html>
