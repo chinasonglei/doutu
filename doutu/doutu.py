@@ -19,11 +19,9 @@ def getImagesList(page):
     reg = r'<a target=.*?<img src="(.*?)" alt="(.*?)"'
     reg = re.compile(reg, re.S)
     imagesList = re.findall(reg, html)
-    #for i in imagesList:
-     #   cursor.execute("insert into meitu(imageName,imageUrl) values('{}','{}')".format(i[1],i[0]))
-      #  db.commit()
     for i in imagesList:
-        print(i[1])
+        cursor.execute("insert into meitu(imageName,imageUrl) values('{}','{}')".format(i[1],i[0]))
+        db.commit()
 
 for i in range(1,73):
     #print('爬去第{}页'.format(i))
